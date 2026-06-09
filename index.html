@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>중앙이상감염연구청 - 대외안내망</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght=300;400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -35,7 +35,7 @@
                 <button type="button" onclick="handleLogin();" class="login-btn">내부망 접속</button>
             </div>
             <div id="loginForm" class="user-info">
-                <span><i class="fa-solid fa-circle-user"></i> <strong>유나비</strong> 연구원</span>
+                <span><i class="fa-solid fa-circle-user"></i> <strong>유나비</strong> 연구원 (현장조사과)</span>
                 <button type="button" onclick="handleLogout();" class="login-btn" style="background:#4b5563;">접속 종료</button>
             </div>
         </div>
@@ -54,16 +54,16 @@
                 <div style="flex: 1.5;">
                     <h3 class="section-sub">인사말</h3>
                     <h4 class="section-main">"국민의 보건 안보와 이상 감염병의 철저한 통제"</h4>
-                    <p style="font-size: 14px; line-height: 1.7; margin-bottom: 15px;">
+                    <p style="font-size: 14px; line-height: 1.7; margin-bottom: 15px; color: inherit;">
                         중앙이상감염연구청(KCIC)은 일반적인 의학 체계와 방역 프로토콜로는 분류 및 대응이 불가능한 '이상 감염 현상'을 전문적으로 추적·관리하는 대한민국 보건복지부 산하의 독립 외청입니다.
                     </p>
-                    <p style="font-size: 14px; line-height: 1.7; margin-bottom: 20px;">
+                    <p style="font-size: 14px; line-height: 1.7; margin-bottom: 20px; color: inherit;">
                         본 청은 대외적으로 희귀 질병 역학조사 및 공중보건 안정을 목적으로 운영되나, 실질적으로는 이상 오염원의 확산을 방지하고 국가 보건 안보를 수호하기 위해 기능합니다.
                     </p>
                     <h3 class="section-sub" style="margin-top: 30px; border-bottom: 2px solid #e5e7eb; padding-bottom: 5px;">주요 연혁</h3>
                     <ul class="history-list">
                         <li><strong>2024.11</strong> | 보건복지부 산하 '중앙이상감염연구원'으로 최초 설립</li>
-                        <li><strong>2025.08</strong> | <strong>[기록 유실]</strong> 원인 미상의 대규모 특수 오염자 대거 유입</li>
+                        <li><strong>2025.08</strong> | <strong>[기록 유실]</strong> 원인 미상의 대규모 특수 오염자 대거 유입 사태 발생</li>
                         <li><strong>2026.03</strong> | 독립 외청(중앙이상감염연구청)으로 공식 승격 및 특별법 발효</li>
                         <li><strong>2026.11</strong> | 대국민 신뢰도 제고를 위한 온라인 대외 안내망 개설 (현재)</li>
                     </ul>
@@ -88,63 +88,4 @@
             
             <div class="org-accordion-wrapper">
                 <button type="button" class="accordion-btn" onclick="toggleAccordion('panel1');">
-                    <span><i class="fa-solid fa-crosshairs"></i> 오염현상조사국 (Investigation)</span>
-                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel1"></i>
-                </button>
-                <div id="panel1" class="accordion-content">
-                    <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-radar"></i> 오염현상탐지과</strong>
-                        <p>국내외에서 발생하는 원인 불명의 급성 이상 징후 및 초자연적 오염 현상을 실시간으로 모니터링하고 분석합니다. 대외 안보 및 정보 기관과의 핫라인을 통해 징후를 선제적으로 식별하며 컨트롤 타워 역할을 수행합니다.</p>
-                    </div>
-                    <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-mask"></i> 현장조사과 (유나비 전 소속 파트)</strong>
-                        <p>이감청 내에서 가장 위험한 최전선 업무를 전담합니다. 오염 현장에 직접 기동 투입되어 변이 오염자 및 오염 매개체를 안전하게 인계·확보하며, 2차 감염 확산을 물리적으로 차단하고 이송하는 업무를 관장합니다.</p>
-                    </div>
-                </div>
-
-                <button type="button" class="accordion-btn" onclick="toggleAccordion('panel2');">
-                    <span><i class="fa-solid fa-dna"></i> 오염체연구국 (Research)</span>
-                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel2"></i>
-                </button>
-                <div id="panel2" class="accordion-content">
-                    <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-microscope"></i> 오염체분석과 (유나비 전 소속 파트)</strong>
-                        <p>이송된 오염자의 신체적·정신적 오염도 및 이상 변이 상태를 분자 의학적, 인과율적 관점에서 정밀 검사합니다. 침식 단계를 분류하고 이상값을 탐지하여 기밀 보고서를 작성하는 핵심 부서입니다.</p>
-                    </div>
-                    <div class="dept-sub-box">
-                        <strong style="color: #dc2626;" class="dept-title-danger"><i class="fa-solid fa-vial-virus"></i> 임상연구과 (보안 2등급 인가 구역)</strong>
-                        <p>수용 시설에 격리된 오염자들을 대상으로 특수 억제 약물 및 백신 후보 물질의 생체 반응을 실험합니다. '더 큰 대의를 위한 통제된 희생'이 실현되는 부서로 윤리적 논란이 가장 빈번하게 발생하는 특수 구역입니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="secret-archive" class="tab-content">
-            <div class="wiki-box">
-                <div class="wiki-alert">
-                    <i class="fa-solid fa-triangle-exclamation"></i> <strong>경고: 본 문서는 보건복지부 보안 2등급 기밀 자료입니다.</strong><br>
-                    비인가 인원의 무단 열람, 복제 및 유포 시 관련 특별법에 의거하여 즉시 격리 처분 및 기억 소각 조치될 수 있습니다.
-                </div>
-                
-                <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 5px;">중앙이상감염연구청 (中央異常感染硏究廳)</h2>
-                <p style="font-size: 12.5px; color: #9ca3af; margin-bottom: 15px;">내부 인트라넷 보안 등급: <span style="color:#ef4444; font-weight:700;">RESTRICTED</span></p>
-
-                <div class="wiki-sec-title">1. 개요</div>
-                <div class="wiki-bullet">대한민국 보건복지부 산하 독립 외청. 일반적인 감염병 체계로는 분류 및 대응이 불가능한 이상 감염 현상을 전문적으로 연구·추적·관리하는 기관이다.</div>
-                <div class="wiki-bullet">전신은 질병관리청 산하 소속기관이었던 중앙이상감염연구원으로, 독립 외청으로 승격되며 현재의 명칭을 갖게 되었다. <strong>승격의 계기는 공식적으로 밝혀진 바 없으며 내부 직원들조차 정확한 경위를 알지 못한다.</strong></div>
-
-                <div class="wiki-sec-title">2. 조직 성향</div>
-                <div class="wiki-bullet">대외적으로는 원인 불명의 희귀 감염 현상을 연구하는 공공 연구기관으로 알려져 있으나, <strong>실제로는 괴담 및 초자연 현상으로 인한 오염자를 수집·격리·연구하는 기관</strong>이다.</div>
-                <div class="wiki-bullet">오염의 종결을 목표로 삼는다는 점에서 재난관리국과 사상적 뿌리를 공유한다. 그러나 <strong>그 목표를 달성하기 위해 오염자의 희생이 불가피하다는 입장을 취한다는 점에서 결정적으로 갈린다.</strong></div>
-                <div class="wiki-bullet">오염자를 치료를 명목으로 수용하지만, 실질적으로는 백신 개발을 위한 실험 재료로 활용한다. 처음부터 희생을 연구 설계에 포함시키기 때문에 재난관리국 요원들에게 매우 불편한 시선을 받는다.</div>
-            </div>
-        </div>
-
-    </main>
-
-    <script src="script.js"></script>
-    <script src="accordion.js"></script>
-    <script src="login.js"></script>
-    <script src="logout.js"></script>
-</body>
-</html>
+                    <span><i class="fa-
