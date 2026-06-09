@@ -1,235 +1,58 @@
-/* 기본 초기화 및 관공서풍 Noto Sans KR 폰트 적용 */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중앙이상감염연구청 - 대외 대국민 안내망</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-style.css">
+</head>
+<body>
+    <header class="public-header">
+        <div class="header-inner">
+            <div class="gov-logo-area">
+                <span class="logo-icon"></span>
+                <span class="logo-text">중앙이상감염연구청</span>
+            </div>
+            <nav class="public-nav">
+                <ul class="nav-links">
+                    <li><a href="#" class="active">청 소개</a></li>
+                    <li><a href="#">감염병 정보</a></li>
+                    <li><a href="#">국민 행동요령</a></li>
+                    <li><a href="#">정보공개</a></li>
+                    <li><a href="#">민원·참여</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f7f9fc; /* 평범하고 밝은 배경 */
-    color: #1f2937;
-    -webkit-font-smoothing: antialiased;
-}
+    <section class="main-banner">
+        <div class="banner-content">
+            <span class="banner-tag">#국민안전 #공중보건</span>
+            <h2>신종 감염병, 신속한 대응으로<br>안전한 대한민국을 만듭니다.</h2>
+            <p>본 청은 365일 실시간 모니터링 시스템을 통해 미확인 바이러스 및 이상 감염 현상을 조기 탐지하고 대응합니다.</p>
+        </div>
+    </section>
 
-/* [상단 헤더] 실제 관공서처럼 배치 */
-.public-header {
-    background-color: #ffffff;
-    border-bottom: 2px solid #e5e7eb;
-}
-.header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.gov-logo-area {
-    display: flex;
-    align-items: center;
-}
-.logo-icon {
-    width: 25px; height: 25px;
-    background-color: #1e3a8a;
-    border-radius: 50%; /* 가짜 태극 로고 */
-    margin-right: 10px;
-    position: relative;
-}
-.logo-icon::after {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 100%; height: 50%;
-    background-color: #ef4444;
-    border-radius: 25px 25px 0 0;
-}
-.logo-text {
-    font-size: 20px;
-    font-weight: 700;
-    color: #111827;
-    letter-spacing: -1px;
-}
-.public-nav {
-    display: flex;
-    align-items: center;
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    margin-right: 30px;
-}
-.nav-links li { margin: 0 15px; }
-.nav-links a {
-    text-decoration: none;
-    color: #4b5563;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 5px 0;
-}
-.nav-links a:hover, .nav-links a.active {
-    color: #1e3a8a;
-    font-weight: 700;
-    border-bottom: 2px solid #1e3a8a;
-}
-.search-area {
-    display: flex;
-}
-.search-area input {
-    padding: 8px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-    font-size: 13px;
-    margin-right: 5px;
-}
-.search-btn {
-    padding: 8px 15px;
-    background-color: #4b5563;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 13px;
-    cursor: pointer;
-}
+    <main class="main-container">
+        <div class="notice-section">
+            <h3>보도자료 및 공지사항</h3>
+            <ul class="notice-list">
+                <li><a href="#"><span class="tag">보도</span> [브리핑] 서부 지역 불명 열성 질환 역학조사 결과 발표</a><span class="date">2026.11.05</span></li>
+                <li><a href="#"><span class="tag">공지</span> 하반기 전국 공중보건 위기대응 합동 훈련 실시 안내</a><span class="date">2026.10.28</span></li>
+            </ul>
+        </div>
+    </main>
 
-/* [메인 배너] 실제 기관 홍보 이미지처럼 배치 */
-.main-banner {
-    background-image: linear-gradient(rgba(1, 23, 76, 0.8), rgba(1, 23, 76, 0.8)), url('https://images.unsplash.com/photo-1579165466521-48e8c47f8581?q=80&w=2000&auto=format&fit=crop'); /* 연구실 느낌의 가짜 배경 이미지 */
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 100px 20px;
-}
-.banner-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-.banner-tag {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #1e3a8a;
-    font-weight: 700;
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-.main-banner h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-}
-.main-banner p {
-    color: #93c5fd;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    font-size: 15px;
-    line-height: 1.7;
-    font-weight: 300;
-}
-.banner-btns {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-.banner-btns a {
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-}
-.btn-primary { background-color: #ffffff; color: #1e3a8a; }
-.btn-secondary { background-color: transparent; border: 1px solid rgba(255,255,255,0.5); color: #ffffff; }
-
-/* [콘텐츠] 보도자료 및 정보 카드 배치 */
-.main-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-    display: flex;
-    gap: 40px;
-}
-.main-container h3, .main-container h4 {
-    font-size: 18px;
-    color: #111827;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.notice-section { flex: 2; }
-.notice-list { list-style: none; border-top: 2px solid #d1d5db; }
-.notice-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 5px;
-    border-bottom: 1px solid #e5e7eb;
-}
-.notice-list li a { text-decoration: none; color: #4b5563; font-size: 14px; flex: 1; margin-right: 20px;}
-.notice-list li a:hover { color: #1e3a8a; font-weight: 500; }
-.notice-list .tag {
-    background-color: #f3f4f6;
-    color: #4b5563;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    margin-right: 10px;
-}
-.notice-list .date { color: #9ca3af; font-size: 13px; }
-
-.info-section { flex: 1; display: flex; flex-direction: column; gap: 30px; }
-.card {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-.chief-content p { font-size: 14px; line-height: 1.7; color: #4b5563; margin-bottom: 10px; }
-.chief-name { display: block; text-align: right; font-weight: 700; color: #111827; font-size: 14px; }
-.card-mission p { font-size: 13px; line-height: 1.7; color: #4b5563; }
-
-/* [하단 푸터] 관공서 푸터 & 비밀 버튼 숨기기 */
-.public-footer {
-    background-color: #ffffff;
-    border-top: 1px solid #e5e7eb;
-    margin-top: 50px;
-}
-.footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
-    text-align: center;
-    position: relative;
-}
-.footer-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-.footer-links li { margin: 0 15px; }
-.footer-links a { text-decoration: none; color: #4b5563; font-size: 13px; }
-.footer-links li:first-child a { color: #1e3a8a; font-weight: 700; }
-
-.footer-info { font-size: 12px; color: #9ca3af; line-height: 1.7; }
-.footer-info p { margin: 2px 0; }
-
-/* [★요원 전용] 아주 흐릿하게 숨겨진 비밀 버튼 연출 */
-.agent-gate-btn {
-    display: inline-block;
-    position: absolute;
-    bottom: 5px; right: 5px;
-    color: #e5e7eb; /* 푸터 배경과 거의 비슷한 색상으로 숨김 */
-    text-decoration: none;
-    font-size: 9px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.agent-gate-btn:hover {
-    color: #1e3a8a; /* 마우스를 올리면 그제야 정부 블루 색으로 바뀜 */
-    font-weight: bold;
-}
+    <footer class="public-footer">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <p>Copyright © 2026 Central Agency for Anomalous Infection Control. All Rights Reserved.</p>
+            </div>
+            <a href="login.html" class="agent-gate-btn">[A]</a>
+        </div>
+    </footer>
+</body>
+</html>
