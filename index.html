@@ -77,61 +77,119 @@
             </div>
         </div>
 
-        <div id="organization" class="tab-content">
-            <h3 style="font-size: 20px; margin-bottom: 5px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
-                <i class="fa-solid fa-sitemap"></i> 조직도 및 주요 업무
-            </h3>
-            <p style="font-size: 13.5px; margin-bottom: 25px; line-height: 1.5; color: #6b7280;" class="sub-txt">
-                ※ 본 조직도는 중앙이상감염연구청 직제 규정에 의거하여 대외적으로 공개된 직제 구조입니다.<br>
-                <strong>부서명을 클릭하시면</strong> 각 하위 과별 구체적인 직무 명세와 상세 설명이 아래로 펼쳐집니다.
-            </p>
-            
+        <div style="padding: 12px 15px; background: rgba(30, 58, 138, 0.05); border: 1px solid #e2e8f0; border-radius: 4px; margin-bottom: 20px; font-size: 14px;">
+                <i class="fa-solid fa-user-shield"></i> <strong>지휘부:</strong> 청장 (차관급) — 차장 (고위공무원단)
+            </div>
+
             <div class="org-accordion-wrapper">
+
+                <button type="button" class="accordion-btn" onclick="toggleAccordion('panel0');">
+                    <span><i class="fa-solid fa-sliders"></i> 4.1. 기획조정관 (Office of Planning and Coordination)</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel0"></i>
+                </button>
+                <div id="panel0" class="accordion-content">
+                    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px; font-style: italic;">"행정, 법무, 예산 등 기관 운영 전반을 담당한다."</p>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-file-invoice-dollar"></i> 기획재정담당관</strong>
+                        <p>이감청의 예산 편성 및 배정, 주요 업무 계획 수립과 성과 관리를 전담합니다.</p>
+                    </div>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-gavel"></i> 행정법무담당관</strong>
+                        <p>기관 내 소송, 법령 해석 및 행정 강제 처분에 대한 법적 검토를 수행합니다.</p>
+                    </div>
+                    <div class="dept-sub-box">
+                        <strong style="color: #dc2626;" class="dept-title-danger"><i class="fa-solid fa-handshake-angle"></i> 대외협력담당관</strong>
+                        <p>초자연재난관리국 등 유관 기관과의 공식 협력 창구입니다. 다만 실질적인 정보 공유는 극히 제한적입니다.</p>
+                    </div>
+                </div>
+
                 <button type="button" class="accordion-btn" onclick="toggleAccordion('panel1');">
-                    <span><i class="fa-solid fa-crosshairs"></i> 오염현상조사국 (Department of Anomalous Phenomenon Investigation)</span>
+                    <span><i class="fa-solid fa-crosshairs"></i> 4.2. 오염현상조사국 (Department of Anomalous Investigation)</span>
                     <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel1"></i>
                 </button>
                 <div id="panel1" class="accordion-content">
+                    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px; font-style: italic;">"이상 감염 현상의 발생을 탐지하고 현장을 조사하는 부서. 현장 채집 업무의 핵심 부서다."</p>
                     <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-radar"></i> 오염현상탐지과 (Anomalous Phenomenon Detection Div.)</strong>
-                        <p>국내외에서 발생하는 원인 불명의 급성 이상 징후 및 초자연적 오염 현상을 실시간으로 모니터링하고 분석합니다. 대외 안보 및 정보 기관과의 핫라인을 통해 징후를 선제적으로 식별하며, 오염 등급에 따른 현장 기동대의 실시간 현장 출동 여부를 결정하는 컨트롤 타워 역할을 수행합니다.</p>
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-radar"></i> 오염현상탐지과</strong>
+                        <p>이상 감염 현상 발생 징후를 모니터링하고 현장 출동 여부를 결정한다.</p>
                     </div>
                     <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-mask"></i> 현장조사과 (Field Investigation Div.)</strong>
-                        <p>이감청 내에서 가장 위험한 최전선 업무를 전담합니다. 오염 현장에 직접 기동 투입되어 변이 오염자 및 오염 매개체를 안전하게 인계·확보하며, 2차 감염 확산을 물리적으로 차단하고 본 청 내부 수용소로 즉각 이송하는 특수 행정 현장 조사를 관장합니다.</p>
+                        <strong style="color: #dc2626;" class="dept-title-danger"><i class="fa-solid fa-mask"></i> 현장조사과 (유나비 전 소속 파트)</strong>
+                        <p>오염 현장에 직접 투입되어 오염자를 확보하고 이송한다. 현장 대응 능력이 요구되는 부서로, 이감청 내에서 가장 위험한 업무를 담당한다.</p>
                     </div>
                     <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-shoe-prints"></i> 오염원추적과 (Contamination Source Tracking Div.)</strong>
-                        <p>현장에서 수집된 단서와 초기 보고를 바탕으로 오염이 시작된 최초의 발원지(인과율 붕괴 지점)를 추적하는 역학 조사를 수행합니다. 공간적 오염 확산 시뮬레이션을 구축하고, 비정형 어둠의 침식 경로를 과학적으로 입증하여 정부에 공식 격리 구역 설정을 건의합니다.</p>
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-shoe-prints"></i> 오염원추적과</strong>
+                        <p>오염의 발생 경로와 확산 패턴을 추적한다.</p>
                     </div>
                 </div>
 
                 <button type="button" class="accordion-btn" onclick="toggleAccordion('panel2');">
-                    <span><i class="fa-solid fa-dna"></i> 오염체연구국 (Department of Contaminated Material Research)</span>
+                    <span><i class="fa-solid fa-dna"></i> 4.3. 오염체연구국 (Department of Contaminated Material Research)</span>
                     <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel2"></i>
                 </button>
                 <div id="panel2" class="accordion-content">
+                    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px; font-style: italic;">"확보된 오염자를 연구하고 데이터를 축적하는 부서. 이감청의 실질적인 핵심 부서다."</p>
                     <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-microscope"></i> 오염체분석과 (Contaminated Material Analysis Div.)</strong>
-                        <p>이송된 오염자의 신체적·정신적 오염도 및 이상 변이 상태를 분자 의학적, 인과율적 관점에서 정밀 검사합니다. 침식 단계를 분류하고, 일반적인 데이터 범주를 벗어난 '이상값(이레귤러)'을 탐지하여 기밀 보고서를 작성하는 핵심적인 데이터 허브입니다.</p>
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-microscope"></i> 오염체분석과 (유나비 전 소속 파트)</strong>
+                        <p>오염자의 상태를 정밀 분석하고 오염 단계를 분류한다.</p>
                     </div>
                     <div class="dept-sub-box">
-                        <strong style="color: #dc2626;" class="dept-title-danger"><i class="fa-solid fa-vial-virus"></i> 임상연구과 (Clinical Research Div. - 보안 2등급 인가 구역)</strong>
-                        <p>수용 시설에 격리된 오염자들을 대상으로 특수 억제 약물 및 치료 후보 물질의 생체 반응을 실험하고 관찰합니다. 이감청의 핵심 사상인 '더 큰 대의를 위한 통제된 희생'이 시스템적으로 실현되는 부서로, 타 정부 기관과의 윤리적 논란이 가장 빈번하게 발생하는 특수 제한 구역입니다.</p>
+                        <strong style="color: #dc2626;" class="dept-title-danger"><i class="fa-solid fa-vial-virus"></i> 임상연구과</strong>
+                        <p>오염자를 대상으로 치료제 및 백신 후보 물질을 실험한다. 이감청의 윤리적 논란이 가장 집중되는 부서.</p>
                     </div>
                     <div class="dept-sub-box">
-                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-server"></i> 오염데이터관리과 (Contamination Data Management Div.)</strong>
-                        <p>반세기 동안 축적된 초자연적 전염병 및 이상 오염 현상의 방대한 빅데이터를 체계적으로 전산화하여 기밀 인트라넷망(KCIC-NET) 시스템을 유지·관리합니다. 외부 해킹이나 비인가 세력(백일몽 등)의 데이터 탈취를 차단하는 특수 사이버 안보 프로토콜을 가동합니다.</p>
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-server"></i> 오염데이터관리과</strong>
+                        <p>축적된 오염 데이터를 체계적으로 관리하고 분류한다.</p>
                     </div>
                 </div>
-            </div>
 
-            <h4 style="font-size: 15px; margin-top: 30px; margin-bottom: 10px; border-top: 1px solid #e5e7eb; padding-top: 20px;" class="section-sub">
-                <i class="fa-solid fa-landmark"></i> 산하 소속 기관
+                <button type="button" class="accordion-btn" onclick="toggleAccordion('panel3');">
+                    <span><i class="fa-solid fa-shield-virus"></i> 4.4. 오염확산방지국 (Contamination Spread Prevention)</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel3"></i>
+                </button>
+                <div id="panel3" class="accordion-content">
+                    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px; font-style: italic;">"오염 현상의 민간 확산을 차단하고 관리하는 부서."</p>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-door-closed"></i> 오염자격리관리과</strong>
+                        <p>확보된 오염자의 격리 및 수용 시설을 관리한다.</p>
+                    </div>
+                    <div class="dept-sub-box">
+                        <strong style="color: #dc2626;" class="dept-title-danger"><i class="fa-solid = fa-magnifying-glass-chart"></i> 민간피해조사과</strong>
+                        <p>오염으로 인한 민간 피해를 조사하고 기록한다. 표면적으로는 피해자 지원을 명목으로 하나 실질적으로는 오염자 추가 확보 루트로 활용되기도 한다.</p>
+                    </div>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-eye"></i> 오염확산감시과</strong>
+                        <p>오염 현상의 지역적 확산 여부를 모니터링한다.</p>
+                    </div>
+                </div>
+
+                <button type="button" class="accordion-btn" onclick="toggleAccordion('panel4');">
+                    <span><i class="fa-solid fa-kit-medical"></i> 4.5. 치료개발국 (Cure Development Bureau)</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel4"></i>
+                </button>
+                <div id="panel4" class="accordion-content">
+                    <p style="font-size: 13px; color: #6b7280; margin-bottom: 15px; font-style: italic;">"오염 치료제 및 대응 약물 개발을 담당하는 부서."</p>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-capsules"></i> 치료제연구과</strong>
+                        <p>오염 치료제 개발을 담당한다. 임상연구과와 긴밀하게 협력한다.</p>
+                    </div>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid = fa-chart-line"></i> 약물효과분석과</strong>
+                        <p>개발된 약물의 효과와 부작용을 분석한다.</p>
+                    </div>
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb;" class="dept-title"><i class="fa-solid fa-virus-slash"></i> 오염면역연구과</strong>
+                        <p>오염에 대한 면역 반응을 연구한다. 장기적으로 백신 개발을 목표로 한다.</p>
+                    </div>
+                </div>
+
+            </div>
+            <h4 style="font-size: 15px; margin-top: 35px; margin-bottom: 10px; border-top: 1px solid #e5e7eb; padding-top: 20px;" class="section-sub">
+                <i class="fa-solid fa-landmark"></i> 4.6. 소속기관
             </h4>
             <p style="font-size: 13.5px; line-height: 1.7; margin: 0; color: inherit;">
-                • <strong>국립이상감염연구소:</strong> 장기적이고 기초적인 초자연 병원체 구조 및 인과율 붕괴 현상 연구<br>
-                • <strong>오염자수용센터:</strong> 전국 주요 거점별로 비밀리에 운영되는 오염자 격리 및 임상 수용 시설 (대외명: 특수 보건 요양원)
+                • <strong>국립이상감염연구소:</strong> 이감청 직속 연구기관. 보다 장기적이고 기초적인 오염 연구를 담당한다.<br>
+                • <strong>오염자수용센터:</strong> 전국에 거점별로 운영되는 오염자 격리 수용 시설. 공식적으로는 치료 시설로 분류된다.
             </p>
         </div>
 
