@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중앙이상감염연구청(KCIC) - 인트라넷 시스템</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <div class="login-container">
+        <div class="login-header">
+            <div class="gov-emblem">제 3 등급 인가자 전용</div>
+            <h1>중앙이상감염연구청</h1>
+            <p class="subtitle">CENTRAL AGENCY FOR ANOMALOUS INFECTION CONTROL</p>
+        </div>
+
+        <div class="warning-box">
+            <strong>[보안 경고]</strong> 본 시스템은 대한민국 정부조직법 및 국가보안법에 의거하여 보호받는 기밀 네트워크입니다. 허가되지 않은 자의 접근, 탈취, 유포 행위는 즉시 추적되며 민형사상의 처벌을 받게 됩니다. 모든 접속 기록은 실시간으로 IP 및 기기 정보와 함께 청 내 보안과로 송신됩니다.
+        </div>
+
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="username">요원 등록번호 (ID)</label>
+                <input type="text" id="username" placeholder="KCIC-XXXX-XXXX" required autofocus>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">보안 2차 인증키 (PW)</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="login-btn">시스템 접속 (ACCESS)</button>
+        </form>
+
+        <div class="login-footer">
+            SYSTEM STATUS: ONLINE | SECURE CONNECTION
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // 페이지 새로고침 방지
+            // 지금은 초보자 단계이므로 어떤 비밀번호를 치든 
+            // 아까 만든 조직도 페이지(organization.html)로 넘어가게 설정했습니다!
+            window.location.href = "organization.html";
+        }
+    </script>
+</body>
+</html>
