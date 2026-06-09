@@ -41,6 +41,26 @@
         </div>
     </header>
 
+<div style="background: #111827; color: #fbbf24; padding: 8px 0; font-size: 13px; border-bottom: 1px solid #374151; overflow: hidden; white-space: nowrap; font-family: 'Share Tech Mono', 'Noto Sans KR', sans-serif;">
+        <style>
+            @keyframes marquee {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+            .gov-ticker {
+                display: inline-block;
+                padding-left: 100%;
+                animation: marquee 25s linear infinite;
+            }
+            .gov-ticker:hover {
+                animation-play-state: paused; /* 마우스를 올리면 안내를 읽을 수 있게 일시정지 */
+            }
+        </style>
+        <div class="gov-ticker">
+            <i class="fa-solid fa-triangle-exclamation"></i> <strong>[SYSTEM NOTICE]</strong> 본 사이트는 세계관 '괴담에 떨어져도 출근을 해야하는구나'에서 파생된 개인 서사용 가상 홈페이지입니다. 명시된 모든 기관, 사건, 인물 등은 창작된 픽션이며 실제 사실 및 현실의 단체·인물과는 절대 무관함을 알립니다. 현실과의 혼동에 주의하십시오. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-network-wired"></i> [KCIC-NET] 인가받지 않은 민간 서버에서의 기밀 탈취 행위는 상시 추적 중입니다.
+        </div>
+    </div>
+
     <nav class="gov-nav" id="govNav">
         <div id="btn-intro" class="nav-item active" onclick="switchTab('intro');">청 소개</div>
         <div id="btn-organization" class="nav-item" onclick="switchTab('organization');">대외 조직 및 업무</div>
