@@ -1,73 +1,89 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; }
-body { background-color: #f4f6f9; color: #333; }
+body { background-color: #f4f6f9; color: #333; transition: all 0.5s ease; }
 
-/* 상단 헤더 */
-.gov-header { background: #1e3a8a; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.logo-area h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 10px; }
+/* 2번 연출: 로그인 로딩 오버레이 */
+.loading-overlay {
+    display: none; position: fixed; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center;
+}
+.loading-box { text-align: center; color: #ef4444; font-family: 'Share Tech Mono', monospace; position: relative; }
+.scan-line { width: 100%; height: 2px; background: #ef4444; animation: scan 1.5s infinite; position: absolute; }
+.scan-text { font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+
+@keyframes scan { 
+    0% { top: -20px; opacity: 0; } 50% { opacity: 1; } 100% { top: 60px; opacity: 0; } 
+}
+
+/* 3번 연출: 위험도 경보 위젯 */
+.risk-widget {
+    display: none; align-items: center; gap: 8px; background: rgba(220, 38, 38, 0.2);
+    border: 1px solid #dc2626; padding: 5px 12px; border-radius: 4px; font-size: 12px;
+    color: #fca5a5; font-family: 'Share Tech Mono', monospace;
+}
+.blink-dot { width: 8px; height: 8px; background: #dc2626; border-radius: 50%; animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+/* 기본 상단 헤더 및 디자인 */
+.gov-header { background: #1e3a8a; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.5s; }
+.logo-area h1 { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
 .logo-area span { font-size: 12px; color: #93c5fd; font-weight: 300; display: block; }
-
-/* 로그인 영역 */
 .login-zone { display: flex; align-items: center; gap: 15px; }
 .login-input { padding: 6px 10px; border: 1px solid #60a5fa; border-radius: 4px; background: rgba(255,255,255,0.1); color: white; font-size: 13px; }
-.login-input::placeholder { color: #93c5fd; }
 .login-btn { background: #2563eb; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; }
-.login-btn:hover { background: #1d4ed8; }
 .user-info { display: none; font-size: 14px; color: #fef08a; align-items: center; gap: 10px; }
 
 /* 네비게이션 메인 탭 */
-.gov-nav { background: white; padding: 0 40px; border-bottom: 1px solid #e5e7eb; display: flex; gap: 40px; }
-.nav-item { padding: 15px 5px; cursor: pointer; font-weight: 500; color: #4b5563; font-size: 15px; border-bottom: 3px solid transparent; transition: all 0.2s; }
+.gov-nav { background: white; padding: 0 40px; border-bottom: 1px solid #e5e7eb; display: flex; gap: 40px; transition: all 0.5s; }
+.nav-item { padding: 15px 5px; cursor: pointer; font-weight: 500; color: #4b5563; font-size: 15px; border-bottom: 3px solid transparent; }
 .nav-item:hover, .nav-item.active { color: #1e3a8a; border-bottom-color: #1e3a8a; }
 .secret-nav { display: none; color: #dc2626; font-weight: 700; }
 .secret-nav.logged-in { display: block; }
 
 /* 메인 컨테이너 */
-.main-container { max-width: 1200px; margin: 30px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 20 rgba(0,0,0,0.05); min-height: 500px; }
+.main-container { max-width: 1200px; margin: 30px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); min-height: 500px; transition: all 0.5s; }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+.section-sub { font-size: 18px; color: #1e3a8a; margin-bottom: 5px; }
+.section-main { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 15px; }
+.history-list { list-style: none; font-size: 13.5px; color: #4b5563; }
+.history-list li { margin-bottom: 8px; }
 
 /* 아코디언 스타일 */
-.accordion-btn {
-    width: 100%;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-left: 4px solid #1e3a8a;
-    padding: 18px 20px;
-    text-align: left;
-    font-size: 15.5px;
-    font-weight: 700;
-    color: #1e3a8a;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: background 0.2s;
-}
-.accordion-btn:hover { background: #f1f5f9; }
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background: #ffffff;
-    border: 1px solid transparent;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    margin-top: -10px;
-    margin-bottom: 15px;
-    padding: 0 20px;
-}
-.accordion-content.open {
-    border-color: #e2e8f0;
-    padding: 20px;
-}
-.arrow-icon { transition: transform 0.2s; }
+.accordion-btn { width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #1e3a8a; padding: 18px 20px; text-align: left; font-size: 15.5px; font-weight: 700; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #ffffff; margin-bottom: 15px; padding: 0 20px; }
+.accordion-content.open { border: 1px solid #e2e8f0; border-top: none; padding: 20px; }
 .dept-sub-box { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0; }
-.dept-sub-box:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.dept-sub-box p { font-size: 13.5px; color: #4b5563; line-height: 1.6; margin-top: 5px;}
 
-/* 나무위키 서식 스타일 */
-.wiki-box { border: 1px solid #ccc; border-top: 3px solid #dc2626; padding: 25px; background: #fafafa; border-radius: 4px; position: relative; }
+/* 기밀문서 아카이브용 (나무위키 스타일) */
+.wiki-box { border: 1px solid #ccc; border-top: 3px solid #dc2626; padding: 25px; background: #fafafa; }
 .wiki-sec-title { font-size: 18px; color: #111827; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 25px; margin-bottom: 12px; font-weight: 700; }
-.wiki-alert { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 13.5px; line-height: 1.6; }
+.wiki-alert { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 15px; font-size: 13.5px; line-height: 1.6; margin-bottom: 20px; }
 .wiki-bullet { list-style: square; padding-left: 20px; margin-bottom: 10px; font-size: 14px; color: #374151; line-height: 1.7; }
+
+/* ==========================================
+   1번 연출: 로그인 성공 후 활성화되는 다크 모드 (비밀 인트라넷 서식)
+============================================ */
+body.dark-mode { background-color: #0b0f19; color: #cbd5e1; }
+body.dark-mode .gov-header { background: #030712; border-bottom: 1px solid #dc2626; }
+body.dark-mode .gov-nav { background: #111827; border-bottom: 1px solid #374151; }
+body.dark-mode .nav-item { color: #9ca3af; }
+body.dark-mode .nav-item:hover, body.dark-mode .nav-item.active { color: #f87171; border-bottom-color: #dc2626; }
+body.dark-mode .main-container { background: #111827; box-shadow: 0 4px 30px rgba(220, 38, 38, 0.1); }
+body.dark-mode .section-sub { color: #f87171; }
+body.dark-mode .section-main { color: #f3f4f6; }
+body.dark-mode .history-list, body.dark-mode .sub-txt { color: #9ca3af; }
+body.dark-mode #imgBox { background: #1f2937 !important; border-color: #374151 !important; }
+body.dark-mode #imgBox img { filter: grayscale(80%) sepia(20%) hue-rotate(320deg); }
+
+/* 다크모드 아코디언 */
+body.dark-mode .accordion-btn { background: #1f2937; border-color: #374151; border-left-color: #dc2626; color: #f87171; }
+body.dark-mode .accordion-content.open { border-color: #374151; background: #111827; }
+body.dark-mode .dept-sub-box { border-bottom-color: #374151; }
+body.dark-mode .dept-title { color: #f87171 !important; }
+body.dark-mode .dept-sub-box p { color: #9ca3af; }
+
+/* 다크모드 나무위키 */
+body.dark-mode .wiki-box { background: #171e2e; border-color: #374151; }
+body.dark-mode .wiki-sec-title { color: #f3f4f6; border-bottom-color: #374151; }
+body.dark-mode .wiki-bullet { color: #9ca3af; }
