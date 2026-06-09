@@ -105,9 +105,13 @@
         </div>
 
         <div id="organization" class="tab-content">
-          <div id="organization" class="tab-content">
-    <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 5px;">조직도 및 주요 업무</h3>
-    <p style="font-size: 13.5px; color: #6b7280; margin-bottom: 25px;">※ 부서명을 클릭하시면 각 과별 구체적인 직무 명세와 상세 설명이 아래로 펼쳐집니다.</p>
+    <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 5px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
+        <i class="fa-solid fa-sitemap"></i> 조직도 및 주요 업무
+    </h3>
+    <p style="font-size: 13.5px; color: #6b7280; margin-bottom: 25px; line-height: 1.5;">
+        ※ 본 조직도는 중앙이상감염연구청 직제 규정에 의거하여 대외적으로 공개된 직제 구조입니다.<br>
+        <strong>부서명을 클릭하시면</strong> 각 하위 과별 구체적인 직무 명세와 상세 설명이 아래로 펼쳐집니다.
+    </p>
     
     <style>
         .accordion-btn {
@@ -117,7 +121,7 @@
             border-left: 4px solid #1e3a8a;
             padding: 18px 20px;
             text-align: left;
-            font-size: 16px;
+            font-size: 15.5px;
             font-weight: 700;
             color: #1e3a8a;
             cursor: pointer;
@@ -134,7 +138,7 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
             background: #ffffff;
             border: 1px solid transparent;
             border-top: none;
@@ -146,6 +150,7 @@
         .accordion-content.open {
             border-color: #e2e8f0;
             padding: 20px;
+            max-height: 1000px; /* 충분한 높이 확보 */
         }
         .dept-sub-box {
             margin-bottom: 15px;
@@ -163,7 +168,7 @@
         
         <button class="accordion-btn" onclick="toggleAccordion('panel1')">
             <span><i class="fa-solid fa-crosshairs"></i> 오염현상조사국 (Department of Anomalous Phenomenon Investigation)</span>
-            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel1"></i>
         </button>
         <div id="panel1" class="accordion-content">
             <div class="dept-sub-box">
@@ -188,7 +193,7 @@
 
         <button class="accordion-btn" onclick="toggleAccordion('panel2')">
             <span><i class="fa-solid fa-dna"></i> 오염체연구국 (Department of Contaminated Material Research)</span>
-            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel2"></i>
         </button>
         <div id="panel2" class="accordion-content">
             <div class="dept-sub-box">
@@ -212,7 +217,11 @@
         </div>
 
     </div>
-</div>
+
+    <h4 style="font-size: 15px; color: #1e3a8a; margin-top: 30px; margin-bottom: 10px; border-top: 1px solid #e5e7eb; padding-top: 20px;">
+        <i class="fa-solid fa-landmark"></i> 산하 소속 기관
+    </h4>
+    <p style="font-size: 13.5px; color: #4b
 
         <div id="secret-archive" class="tab-content">
             <div class="wiki-box">
