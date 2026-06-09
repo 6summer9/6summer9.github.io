@@ -39,9 +39,9 @@ body { background-color: #f4f6f9; color: #333; transition: all 0.5s ease; }
 .secret-nav { display: none; color: #dc2626; font-weight: 700; }
 .secret-nav.logged-in { display: block; }
 
-/* 메인 컨테이너 */
-.main-container { max-width: 1200px; margin: 30px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); min-height: 500px; transition: all 0.5s; }
-.tab-content { display: none; }
+/* 메인 컨테이너 (★글자 잘림 방지 처리를 위해 height를 유연하게 설정) */
+.main-container { max-width: 1200px; margin: 30px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); min-height: 500px; height: auto !important; overflow: visible !important; transition: all 0.5s; }
+.tab-content { display: none; width: 100%; height: auto; }
 .tab-content.active { display: block; }
 .section-sub { font-size: 18px; color: #1e3a8a; margin-bottom: 5px; }
 .section-main { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 15px; }
@@ -51,25 +51,29 @@ body { background-color: #f4f6f9; color: #333; transition: all 0.5s ease; }
 /* 아코디언 스타일 */
 .accordion-btn { width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #1e3a8a; padding: 18px 20px; text-align: left; font-size: 15.5px; font-weight: 700; color: #1e3a8a; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #ffffff; margin-bottom: 15px; padding: 0 20px; }
-.accordion-content.open { border: 1px solid #e2e8f0; border-top: none; padding: 20px; }
+.accordion-content.open { border: 1px solid #e2e8f0; border-top: none; padding: 20px; max-height: none !important; }
 .dept-sub-box { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #e2e8f0; }
 .dept-sub-box p { font-size: 13.5px; color: #4b5563; line-height: 1.6; margin-top: 5px;}
 
 /* 기밀문서 아카이브용 (나무위키 스타일) */
-.wiki-box { border: 1px solid #ccc; border-top: 3px solid #dc2626; padding: 25px; background: #fafafa; }
+.wiki-box { border: 1px solid #ccc; border-top: 3px solid #dc2626; padding: 25px; background: #fafafa; height: auto; }
 .wiki-sec-title { font-size: 18px; color: #111827; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 25px; margin-bottom: 12px; font-weight: 700; }
 .wiki-alert { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 15px; font-size: 13.5px; line-height: 1.6; margin-bottom: 20px; }
 .wiki-bullet { list-style: square; padding-left: 20px; margin-bottom: 10px; font-size: 14px; color: #374151; line-height: 1.7; }
 
 /* ==========================================
-   1번 연출: 로그인 성공 후 활성화되는 다크 모드 (비밀 인트라넷 서식)
+   다크 모드 (비밀 인트라넷 서식) - 잘림 방지 패치 완료
 ============================================ */
 body.dark-mode { background-color: #0b0f19; color: #cbd5e1; }
 body.dark-mode .gov-header { background: #030712; border-bottom: 1px solid #dc2626; }
 body.dark-mode .gov-nav { background: #111827; border-bottom: 1px solid #374151; }
 body.dark-mode .nav-item { color: #9ca3af; }
 body.dark-mode .nav-item:hover, body.dark-mode .nav-item.active { color: #f87171; border-bottom-color: #dc2626; }
-body.dark-mode .main-container { background: #111827; box-shadow: 0 4px 30px rgba(220, 38, 38, 0.1); }
+
+/* ★ 다크모드 컨테이너도 내용에 따라 무한히 늘어나도록 강제 지정 */
+body.dark-mode .main-container { background: #111827; box-shadow: 0 4px 30px rgba(220, 38, 38, 0.1); height: auto !important; overflow: visible !important; }
+body.dark-mode .tab-content { height: auto !important; }
+
 body.dark-mode .section-sub { color: #f87171; }
 body.dark-mode .section-main { color: #f3f4f6; }
 body.dark-mode .history-list, body.dark-mode .sub-txt { color: #9ca3af; }
@@ -78,12 +82,12 @@ body.dark-mode #imgBox img { filter: grayscale(80%) sepia(20%) hue-rotate(320deg
 
 /* 다크모드 아코디언 */
 body.dark-mode .accordion-btn { background: #1f2937; border-color: #374151; border-left-color: #dc2626; color: #f87171; }
-body.dark-mode .accordion-content.open { border-color: #374151; background: #111827; }
+body.dark-mode .accordion-content.open { border-color: #374151; background: #111827; max-height: none !important; }
 body.dark-mode .dept-sub-box { border-bottom-color: #374151; }
 body.dark-mode .dept-title { color: #f87171 !important; }
 body.dark-mode .dept-sub-box p { color: #9ca3af; }
 
 /* 다크모드 나무위키 */
-body.dark-mode .wiki-box { background: #171e2e; border-color: #374151; }
+body.dark-mode .wiki-box { background: #171e2e; border-color: #374151; height: auto !important; }
 body.dark-mode .wiki-sec-title { color: #f3f4f6; border-bottom-color: #374151; }
 body.dark-mode .wiki-bullet { color: #9ca3af; }
