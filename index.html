@@ -111,8 +111,8 @@
     </header>
 
     <nav class="gov-nav">
-        <div id="tab-intro" class="nav-item active" onclick="switchTab('intro')">청 소개</div>
-        <div id="tab-organization" class="nav-item" onclick="switchTab('organization')">대외 조직 및 업무</div>
+        <div id="btn-intro" class="nav-item active" onclick="switchTab('intro')">청 소개</div>
+        <div id="btn-organization" class="nav-item" onclick="switchTab('organization')">대외 조직 및 업무</div>
         <div id="secretTab" class="nav-item secret-nav" onclick="switchTab('secret-archive')"><i class="fa-solid fa-lock-open"></i> [인가자전용] 기밀 아카이브</div>
     </nav>
 
@@ -148,3 +148,20 @@
 
         <div id="organization" class="tab-content">
             <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 5px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
+                <i class="fa-solid fa-sitemap"></i> 조직도 및 주요 업무
+            </h3>
+            <p style="font-size: 13.5px; color: #6b7280; margin-bottom: 25px; line-height: 1.5;">
+                ※ 본 조직도는 중앙이상감염연구청 직제 규정에 의거하여 대외적으로 공개된 직제 구조입니다.<br>
+                <strong>부서명을 클릭하시면</strong> 각 하위 과별 구체적인 직무 명세와 상세 설명이 아래로 펼쳐집니다.
+            </p>
+            
+            <div class="org-accordion-wrapper">
+                <button class="accordion-btn" onclick="toggleAccordion('panel1')">
+                    <span><i class="fa-solid fa-crosshairs"></i> 오염현상조사국 (Department of Anomalous Phenomenon Investigation)</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon" id="arrow-panel1" style="transition: transform 0.2s;"></i>
+                </button>
+                <div id="panel1" class="accordion-content">
+                    <div class="dept-sub-box">
+                        <strong style="color: #2563eb; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-radar"></i> 오염현상탐지과 (Anomalous Phenomenon Detection Div.)</strong>
+                        <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                            국내외에서 발생하는 원인 불명의 급성 이상 징후 및 초자연적 오염 현상을 실시간으로 모니터링하고 분석합니다. 대외 안보 및 정보 기관과의 핫라인을 통해 징후를 선제적으로 식별하며, 오염 등급에 따른 현장 기동대의 실
