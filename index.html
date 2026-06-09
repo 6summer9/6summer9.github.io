@@ -3,78 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이감청 인트라넷 - 조직도</title>
-    <link rel="stylesheet" href="org-style.css">
+    <title>중앙이상감염연구청(KCIC) - 인트라넷 시스템</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="intra-nav">
-        <div class="nav-logo">KCIC INTRANET</div>
-        <ul class="nav-menu">
-            <li><a href="#">청 소개</a></li>
-            <li class="active"><a href="#">조직 및 업무</a></li>
-            <li><a href="#">기밀 데이터베이스</a></li>
-            <li><a href="#">업무 공지</a></li>
-        </ul>
-        <div class="nav-user">보안 등급: Level 3 [연구원]</div>
-    </nav>
+    <div class="bg-grid"></div>
 
-    <main class="content-container">
-        <div class="page-header">
-            <h2>중앙이상감염연구청 조직도</h2>
-            <p>부서명을 클릭하거나 마우스를 올리면 세부 직무 및 보안 지침을 확인할 수 있습니다.</p>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="gov-emblem">제 3 등급 인가자 전용</div>
+            <h1>중앙이상감염연구청</h1>
+            <p class="subtitle">CENTRAL AGENCY FOR ANOMALOUS INFECTION CONTROL</p>
         </div>
 
-        <div class="org-chart">
-            <div class="chart-level level-1">
-                <div class="org-node leader" data-dept="청장/차장">
-                    <h3>청장 / 차장</h3>
-                    <p class="hidden-text">이상 감염 현상 종결 및 기밀 유지 총괄 지휘</p>
-                </div>
-            </div>
-
-            <div class="branch-line"></div>
-
-            <div class="chart-level level-2">
-                <div class="org-node" data-dept="조사국">
-                    <h3>오염현상조사국</h3>
-                    <p class="dept-purpose">이상 징후 탐지 및 현장 조사</p>
-                    <div class="sub-overlay">
-                        <h4>[기밀 지침]</h4>
-                        <ul>
-                            <li><strong>오염현상탐지과:</strong> 변이 징후 모니터링</li>
-                            <li><strong>현장조사과:</strong> 오염자 강제 확보 및 이송</li>
-                            <li><strong>오염원추적과:</strong> 확산 경로 및 역학조사</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="org-node warning-node" data-dept="연구국">
-                    <h3>오염체연구국</h3>
-                    <p class="dept-purpose">오염자 분석 및 데이터 축적</p>
-                    <div class="sub-overlay">
-                        <h4>[기밀 지침]</h4>
-                        <ul>
-                            <li><strong>오염체분석과:</strong> 오염 등급 정밀 분류</li>
-                            <li><strong>임상연구과:</strong> 백신 개발용 생체 실험 진행</li>
-                            <li><strong>오염데이터과:</strong> 분석 데이터 암호화 관리</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="org-node" data-dept="개발국">
-                    <h3>치료개발국</h3>
-                    <p class="dept-purpose">대응 약물 및 백신 개발</p>
-                    <div class="sub-overlay">
-                        <h4>[기밀 지침]</h4>
-                        <ul>
-                            <li><strong>치료제연구과:</strong> 임상 데이터 기반 약물 제조</li>
-                            <li><strong>약물효과분석과:</strong> 부작용 및 치사율 검증</li>
-                            <li><strong>오염면역연구과:</strong> 항체 형성 유도 실험</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="warning-box">
+            <strong>[보안 경고]</strong> 본 시스템은 대한민국 정부조직법 및 국가보안법에 의거하여 보호받는 기밀 네트워크입니다. 허가되지 않은 자의 접근, 탈취, 유포 행위는 즉시 추적되며 민형사상의 처벌을 받게 됩니다. 모든 접속 기록은 실시간으로 IP 및 기기 정보와 함께 청 내 보안과로 송신됩니다.
         </div>
-    </main>
+
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="username">요원 등록번호 (ID)</label>
+                <input type="text" id="username" placeholder="KCIC-XXXX-XXXX" required autofocus>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">보안 2차 인증키 (PW)</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="login-btn">시스템 접속 (ACCESS)</button>
+        </form>
+
+        <div class="login-footer">
+            SYSTEM STATUS: ONLINE | SECURE CONNECTION
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // 페이지 새로고침 방지
+            // 지금은 초보자 단계이므로 어떤 비밀번호를 치든 
+            // 아까 만든 조직도 페이지(organization.html)로 넘어가게 설정했습니다!
+            window.location.href = "organization.html";
+        }
+    </script>
 </body>
 </html>
