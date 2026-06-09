@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이감청 인트라넷 - 조직도</title>
+    <link rel="stylesheet" href="org-style.css">
+</head>
+<body>
+    <nav class="intra-nav">
+        <div class="nav-logo">KCIC INTRANET</div>
+        <ul class="nav-menu">
+            <li><a href="#">청 소개</a></li>
+            <li class="active"><a href="#">조직 및 업무</a></li>
+            <li><a href="#">기밀 데이터베이스</a></li>
+            <li><a href="#">업무 공지</a></li>
+        </ul>
+        <div class="nav-user">보안 등급: Level 3 [연구원]</div>
+    </nav>
+
+    <main class="content-container">
+        <div class="page-header">
+            <h2>중앙이상감염연구청 조직도</h2>
+            <p>부서명을 클릭하거나 마우스를 올리면 세부 직무 및 보안 지침을 확인할 수 있습니다.</p>
+        </div>
+
+        <div class="org-chart">
+            <div class="chart-level level-1">
+                <div class="org-node leader" data-dept="청장/차장">
+                    <h3>청장 / 차장</h3>
+                    <p class="hidden-text">이상 감염 현상 종결 및 기밀 유지 총괄 지휘</p>
+                </div>
+            </div>
+
+            <div class="branch-line"></div>
+
+            <div class="chart-level level-2">
+                <div class="org-node" data-dept="조사국">
+                    <h3>오염현상조사국</h3>
+                    <p class="dept-purpose">이상 징후 탐지 및 현장 조사</p>
+                    <div class="sub-overlay">
+                        <h4>[기밀 지침]</h4>
+                        <ul>
+                            <li><strong>오염현상탐지과:</strong> 변이 징후 모니터링</li>
+                            <li><strong>현장조사과:</strong> 오염자 강제 확보 및 이송</li>
+                            <li><strong>오염원추적과:</strong> 확산 경로 및 역학조사</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="org-node warning-node" data-dept="연구국">
+                    <h3>오염체연구국</h3>
+                    <p class="dept-purpose">오염자 분석 및 데이터 축적</p>
+                    <div class="sub-overlay">
+                        <h4>[기밀 지침]</h4>
+                        <ul>
+                            <li><strong>오염체분석과:</strong> 오염 등급 정밀 분류</li>
+                            <li><strong>임상연구과:</strong> 백신 개발용 생체 실험 진행</li>
+                            <li><strong>오염데이터과:</strong> 분석 데이터 암호화 관리</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="org-node" data-dept="개발국">
+                    <h3>치료개발국</h3>
+                    <p class="dept-purpose">대응 약물 및 백신 개발</p>
+                    <div class="sub-overlay">
+                        <h4>[기밀 지침]</h4>
+                        <ul>
+                            <li><strong>치료제연구과:</strong> 임상 데이터 기반 약물 제조</li>
+                            <li><strong>약물효과분석과:</strong> 부작용 및 치사율 검증</li>
+                            <li><strong>오염면역연구과:</strong> 항체 형성 유도 실험</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
