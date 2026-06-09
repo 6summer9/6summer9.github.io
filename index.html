@@ -105,18 +105,114 @@
         </div>
 
         <div id="organization" class="tab-content">
-            <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 5px;">조직도 및 주요 업무</h3>
-            <div class="org-grid">
-                <div class="org-card">
-                    <strong><i class="fa-solid fa-crosshairs"></i> 오염현상조사국</strong>
-                    <p style="font-size: 13px; color: #4b5563; line-height: 1.6;">• 오염현상탐지과 / 현장조사과 / 오염원추적과</p>
-                </div>
-                <div class="org-card">
-                    <strong><i class="fa-solid fa-dna"></i> 오염체연구국</strong>
-                    <p style="font-size: 13px; color: #4b5563; line-height: 1.6;">• 오염체분석과 / 임상연구과 / 오염데이터관리과</p>
-                </div>
+          <div id="organization" class="tab-content">
+    <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 5px;">조직도 및 주요 업무</h3>
+    <p style="font-size: 13.5px; color: #6b7280; margin-bottom: 25px;">※ 부서명을 클릭하시면 각 과별 구체적인 직무 명세와 상세 설명이 아래로 펼쳐집니다.</p>
+    
+    <style>
+        .accordion-btn {
+            width: 100%;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #1e3a8a;
+            padding: 18px 20px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3a8a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: background 0.2s;
+        }
+        .accordion-btn:hover {
+            background: #f1f5f9;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #ffffff;
+            border: 1px solid transparent;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+        .accordion-content.open {
+            border-color: #e2e8f0;
+            padding: 20px;
+        }
+        .dept-sub-box {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .dept-sub-box:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    </style>
+
+    <div class="org-accordion-wrapper">
+        
+        <button class="accordion-btn" onclick="toggleAccordion('panel1')">
+            <span><i class="fa-solid fa-crosshairs"></i> 오염현상조사국 (Department of Anomalous Phenomenon Investigation)</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </button>
+        <div id="panel1" class="accordion-content">
+            <div class="dept-sub-box">
+                <strong style="color: #2563eb; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-radar"></i> 오염현상탐지과 (Anomalous Phenomenon Detection Div.)</strong>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                    국내외에서 발생하는 원인 불명의 급성 이상 징후 및 초자연적 오염 현상을 실시간으로 모니터링하고 분석합니다. 대외 안보 및 정보 기관과의 핫라인을 통해 징후를 선제적으로 식별하며, 오염 등급에 따른 현장 기동대의 실시간 현장 출동 여부를 결정하는 컨트롤 타워 역할을 수행합니다.
+                </p>
+            </div>
+            <div class="dept-sub-box">
+                <strong style="color: #2563eb; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-mask"></i> 현장조사과 (Field Investigation Div. - 유나비 전 소속 파트)</strong>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                    이감청 내에서 가장 위험한 최전선 업무를 전담합니다. 오염 현장에 직접 기동 투입되어 변이 오염자 및 오염 매개체를 안전하게 인계·확보하며, 2차 감염 확산을 물리적으로 차단하고 본 청 내부 수용소로 즉각 이송하는 특수 행정 현장 조사를 관장합니다. (※ 일정 수준 이상의 고도화된 초자연적 현장 적응력 및 생존력이 요구됨)
+                </p>
+            </div>
+            <div class="dept-sub-box">
+                <strong style="color: #2563eb; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-shoe-prints"></i> 오염원추적과 (Contamination Source Tracking Div.)</strong>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                    현장에서 수집된 단서와 초기 보고를 바탕으로 오염이 시작된 최초의 발원지(인과율 붕괴 지점)를 추적하는 역학 조사를 수행합니다. 공간적 오염 확산 시뮬레이션을 구축하고, 비정형 어둠의 침식 경로를 과학적으로 입증하여 정부에 공식 격리 구역 설정을 건의합니다.
+                </p>
             </div>
         </div>
+
+        <button class="accordion-btn" onclick="toggleAccordion('panel2')">
+            <span><i class="fa-solid fa-dna"></i> 오염체연구국 (Department of Contaminated Material Research)</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </button>
+        <div id="panel2" class="accordion-content">
+            <div class="dept-sub-box">
+                <strong style="color: #2563eb; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-microscope"></i> 오염체분석과 (Contaminated Material Analysis Div. - 유나비 전 소속 파트)</strong>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                    이송된 오염자의 신체적·정신적 오염도 및 이상 변이 상태를 분자 의학적, 인과율적 관점에서 정밀 검사합니다. 침식 단계를 분류하고, 일반적인 데이터 범주를 벗어난 '이상값(이레귤러)'을 탐지하여 기밀 보고서를 작성하는 핵심적인 데이터 허브입니다.
+                </p>
+            </div>
+            <div class="dept-sub-box">
+                <strong style="color: #dc2626; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-vial-virus"></i> 임상연구과 (Clinical Research Div. - 보안 2등급 인가 구역)</strong>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                    수용 시설에 격리된 오염자들을 대상으로 특수 억제 약물 및 치료 후보 물질의 생체 반응을 실험하고 관찰합니다. 이감청의 핵심 사상인 '더 큰 대의를 위한 통제된 희생'이 시스템적으로 실현되는 부서로, 타 정부 기관과의 윤리적 논란이 가장 빈번하게 발생하는 특수 제한 구역입니다.
+                </p>
+            </div>
+            <div class="dept-sub-box">
+                <strong style="color: #2563eb; font-size: 14.5px; display: block; margin-bottom: 5px;"><i class="fa-solid fa-server"></i> 오염데이터관리과 (Contamination Data Management Div.)</strong>
+                <p style="font-size: 13.5px; color: #4b5563; line-height: 1.6;">
+                    반세기 동안 축적된 초자연적 전염병 및 이상 오염 현상의 방대한 빅데이터를 체계적으로 전산화하여 기밀 인트라넷망(KCIC-NET) 시스템을 유지·관리합니다. 외부 해킹이나 비인가 세력(백일몽 등)의 데이터 탈취를 차단하는 특수 사이버 안보 프로토콜을 가동합니다.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
 
         <div id="secret-archive" class="tab-content">
             <div class="wiki-box">
@@ -187,6 +283,35 @@
             switchTab('intro');
             alert("내부망 세션이 만료되었습니다.");
         }
+
+function toggleAccordion(panelId) {
+    const panel = document.getElementById(panelId);
+    const btn = panel.previousElementSibling;
+    const arrow = btn.querySelector('.arrow-icon');
+    
+    // 다른 아코디언이 열려있다면 닫아주기 (깔끔한 정돈을 위해)
+    document.querySelectorAll('.accordion-content').forEach(p => {
+        if (p.id !== panelId && p.classList.contains('open')) {
+            p.classList.remove('open');
+            p.style.maxHeight = null;
+            p.previousElementSibling.querySelector('.arrow-icon').style.transform = 'rotate(0deg)';
+        }
+    });
+
+    // 현재 클릭한 패널 토글 토글
+    if (panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        panel.style.maxHeight = null;
+        arrow.style.transform = 'rotate(0deg)';
+    } else {
+        panel.classList.add('open');
+        // 내용물 크기만큼 부드럽게 늘어나도록 설정
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        arrow.style.transform = 'rotate(180deg)';
+        arrow.style.transition = 'transform 0.2s';
+    }
+}
+
     </script>
 </body>
 </html>
