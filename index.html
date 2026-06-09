@@ -41,23 +41,24 @@
         </div>
     </header>
 
-<div style="display: block !important; background: #fef08a; !important; color: #dc2626; !important; padding: 8px 0 !important; font-size: 13px !important; border-bottom: 1px solid #fef08a; !important; overflow: hidden !important; white-space: nowrap !important; font-family: 'Share Tech Mono', 'Noto Sans KR', sans-serif !important; height: auto !important; visibility: visible !important; opacity: 1 !important;">
+<div style="display: block !important; background: #fef08a !important; color: #dc2626 !important; padding: 8px 0 !important; font-size: 13px !important; border-bottom: 1px solid #fef08a !important; overflow: hidden !important; white-space: nowrap !important; font-family: 'Share Tech Mono', 'Noto Sans KR', sans-serif !important; height: auto !important; visibility: visible !important; opacity: 1 !important;">
         <style>
             @keyframes marquee {
-                0% { transform: right(0%); }
-                100% { transform: translateX(-100%); }
+                /* 출발 지점을 화면 우측 끝(0%)으로 잡아 지연 시간을 없앱니다 */
+                0% { transform: translate3d(0, 0, 0); padding-left: 100%; }
+                100% { transform: translate3d(-100%, 0, 0); padding-left: 0%; }
             }
             .gov-ticker {
                 display: inline-block;
-                padding-left: 100%;
-                animation: marquee 50linear infinite;
+                /* 원래 25s였던 숫자를 45s로 늘려 훨씬 여유롭고 느리게 흘러가도록 만듭니다 */
+                animation: marquee 45s linear infinite;
             }
             .gov-ticker:hover {
-                animation-play-state: paused; /* 마우스를 올리면 안내를 읽을 수 있게 일시정지 */
+                animation-play-state: paused;
             }
         </style>
         <div class="gov-ticker">
-            <i class="fa-solid fa-triangle-exclamation"></i> <strong>[SYSTEM NOTICE]</strong> 본 사이트는 웹소설 '괴담에 떨어져도 출근을 해야하는구나'에서 파생된 OC 서사용 가상 홈페이지입니다. 명시된 모든 기관, 사건, 인물 등은 창작된 픽션이며 실제 사실 및 현실의 단체·인물과는 무관함을 알립니다. 현실과의 혼동에 주의하십시오. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-network-wired"></i> [KCIC-NET] 인가받지 않은 민간 서버에서의 기밀 탈취 행위는 상시 추적 중입니다.
+            <i class="fa-solid fa-triangle-exclamation"></i> <strong>[SYSTEM NOTICE]</strong> 본 사이트는 세계관 '괴담에 떨어져도 출근을 해야하는구나'에서 파생된 개인 서사용 가상 홈페이지입니다. 명시된 모든 기관, 사건, 인물 등은 창작된 픽션이며 실제 사실 및 현실의 단체·인물과는 절대 무관함을 알립니다. 현실과의 혼동에 주의하십시오. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-network-wired"></i> [KCIC-NET] 인가받지 않은 민간 서버에서의 기밀 탈취 행위는 상시 추적 중입니다.
         </div>
     </div>
 
