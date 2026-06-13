@@ -122,21 +122,28 @@
                         <input type="text" id="cardIdNum" value="KCIC-2026-0812" oninput="updateCardData();" style="width:100%; padding:6px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; font-family:'Share Tech Mono'; box-sizing:border-box;">
                     </div>
                     <div>
-                        <label style="display:block; font-size:12px; font-weight:bold; color:#334155; margin-bottom:5px;">소속 부서 지정</label>
-                        <select id="cardDept" onchange="updateCardData();" style="width:100%; padding:6px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; box-sizing:border-box;">
-                            <option value="오염현상탐지과">오염현상탐지과</option>
-                            <option value="현장조사과" selected>현장조사과</option>
-                            <option value="오염체분석과">오염체분석과</option>
-                            <option value="임상연구과">임상연구과</option>
-                            <option value="오염자격리관리과">오염자격리관리과</option>
-                        </select>
-                    </div>
-                    <div>
                         <label style="display:block; font-size:12px; font-weight:bold; color:#334155; margin-bottom:5px;">보안 승인 등급</label>
                         <select id="cardLevel" onchange="updateCardData();" style="width:100%; padding:6px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; box-sizing:border-box;">
                             <option value="LEVEL 1 (일반 행정)">LEVEL 1 (일반 행정)</option>
                             <option value="LEVEL 2 (제한적 기밀)" selected>LEVEL 2 (제한적 기밀)</option>
                             <option value="LEVEL 3 (극비·현장요원)">LEVEL 3 (극비·현장요원)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:12px; font-weight:bold; color:#334155; margin-bottom:5px;">소속 국 지정</label>
+                        <select id="cardDeptBureau" onchange="handleBureauChange();" style="width:100%; padding:6px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; box-sizing:border-box;">
+                            <option value="오염현상조사국" selected>오염현상조사국</option>
+                            <option value="오염체연구국">오염체연구국</option>
+                            <option value="오염확산방지국">오염확산방지국</option>
+                            <option value="치료개발국">치료개발국</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:12px; font-weight:bold; color:#334155; margin-bottom:5px;">소속 과 지정</label>
+                        <select id="cardDeptSection" onchange="updateCardData();" style="width:100%; padding:6px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; box-sizing:border-box;">
+                            <option value="오염현상탐지과">오염현상탐지과</option>
+                            <option value="현장조사과" selected>현장조사과</option>
+                            <option value="오염원추적과">오염원추적과</option>
                         </select>
                     </div>
                     <div style="grid-column: 1 / -1;">
@@ -162,12 +169,14 @@
                                 <img id="cardUserImg" src="" style="width:100%; height:100%; object-fit:cover; display:none;">
                             </div>
                             
-                            <div style="text-align:center; width:100%;">
-                                <span id="viewDept" style="font-size: 11px; color: #2563eb; font-weight:500; display:block; margin-bottom:3px;">현장조사과</span>
+                           <div style="text-align:center; width:100%;">
+                                <span style="font-size: 11px; color: #2563eb; font-weight:500; display:block; margin-bottom:3px;">
+                                    <span id="viewBureau">오염현상조사국</span> · <span id="viewSection">현장조사과</span>
+                                </span>
                                 <strong id="viewName" style="font-size: 20px; color: #0f172a; letter-spacing: 5px; display:block; margin-bottom:12px; padding-left:5px;">유나비</strong>
                                 
                                 <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding: 8px 12px; font-size:11.5px; color:#334155; text-align:left; line-height:1.6;">
-                                    <div style="display:flex; justify-content:space-between;"><strong>• 직무 구분:</strong> <span>정부 특별요원</span></div>
+                                    <div style="display:flex; justify-content:space-between;"><strong>• 소속 부서:</strong> <span id="viewCardDeptStr">오염현상조사국 현장조사과</span></div>
                                     <div style="display:flex; justify-content:space-between;"><strong>• 임직원 사번:</strong> <span id="viewIdNum" style="font-family:'Share Tech Mono'; font-weight:bold;">KCIC-2026-0812</span></div>
                                     <div style="display:flex; justify-content:space-between;"><strong>• 보안 권한:</strong> <span id="viewLevel" style="color:#dc2626; font-weight:bold;">LEVEL 2 (제한적 기밀)</span></div>
                                 </div>
