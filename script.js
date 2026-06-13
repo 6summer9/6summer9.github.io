@@ -50,29 +50,91 @@ function loadCardImage(event) {
     }
 }
 
-// 3. 완성된 사원증을 캡처해서 PC/폰에 .png 이미지로 자동 저장해주는 함수
+// 1. 사용자가 '국'을 바꿨을 때 '과' 선택지를 실시간으로 갈아 끼워주는 연동 함수
+function handleBureauChange() {
+    var bureauSelect = document.getElementById('cardDeptBureau');
+    var sectionSelect = document.getElementById('cardDeptSection');
+    var selectedBureau = bureauSelect.value;
+    
+    // 기존 과 선택지 비우기
+    sectionSelect.innerHTML = "";
+    
+    // 사용자가 선택한 국에 맞춰 알맞은 과 배열 매칭
+    var sections = [];
+    if (selectedBureau === "오염현상조사국") {
+        sections = ["오염현상탐지과", "현장조사과", "오염원추적과"];
+    } else if (selectedBureau === "오염체연구국") {
+        sections = ["오염체분석과", "임상연구과", "오염데이터관리과"];
+    } else if (selectedBureau === "오염확산방지국") {
+        sections = ["오염자격리관리과", "민간피해조사과", "오염확산감시과"];
+    } else if (selectedBureau === "치료개발국") {
+        sections = ["치료제연구과", "약물효과분석과", "오염면역연구과"];
+    }
+    
+    // 새로운 과 선택지 주입
+    sections.forEach(function(sectionName) {
+        var opt = document.createElement('option');
+        opt.value = sectionName;
+        opt.innerHTML = sectionName;
+        sectionSelect.appendChild(opt);
+    });
+    
+    // 데이터 즉시 동기화
+    updateCardData();
+}
+
+// 2. 텍스트 정보들을 사원증 앞·뒷면에 정밀 매칭하는 함수
+function updateCardData() {
+    var name = document.getElementById('cardName').value;
+    var idNum = document.getElementById('cardIdNum').value;
+    var bureau = document.getElementById('cardDeptBureau').value;
+    var section = document.getElementById('cardDeptSection').value;
+    var level = document.getElementById('cardLevel').value;
+
+    // 앞면 갱신
+    document.getElementById('viewName').innerText = name ? name : "유나비";
+    document.getElementById('viewIdNum').innerText = idNum ? idNum : "KCIC-2026-0812";
+    document.getElementById('viewBureau').innerText = bureau;
+    document.getElementById('viewSection').innerText = section;
+    
+    // 뒷면 보안 권한 등급 갱신
+    document.getElementById('viewLevel').innerText = level;
+}
+
+// 3. 증명사진 파일 업로드 제어 함수
+function loadCardImage(event) {
+    var file = event.target.files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var userImg = document.getElementById('cardUserImg');
+            var defIcon = document.getElementById('cardDefIcon');
+            userImg.src = e.target.result;
+            userImg.style.display = 'block';
+            defIcon.style.display = 'none';
+        }
+        reader.readAsDataURL(file);
+    }
+}
+
+// 4. 사원증 다운로드용 이미지 캡처 렌더링 함수
 function downloadIdCard(side) {
-    // 앞면('front')인지 뒷면('back')인지 판별하여 타겟 상자 지정
     var targetId = (side === 'front') ? 'idCardFront' : 'idCardBack';
     var targetElement = document.getElementById(targetId);
-    
-    // 다운로드할 때 파일 이름 설정 (예: KCIC_사원증_앞면.png)
     var userName = document.getElementById('cardName').value || '요원';
     var fileName = 'KCIC_사원증_' + userName + '_' + (side === 'front' ? '앞면' : '뒷면') + '.png';
 
-    // html2canvas 라이브러리를 사용해 해당 구역을 고화질 이미지로 굽기
     html2canvas(targetElement, {
-        scale: 2, // 숫자를 2로 두어 다운로드 시 글씨가 깨지지 않고 아주 선명하게 나오도록 조절
-        backgroundColor: null, // 카드 테두리 바깥은 투명하게 처리
-        useCORS: true // 외부 아이콘(FontAwesome)이 캡처에서 깨지는 걸 방지
+        scale: 2, 
+        backgroundColor: null, 
+        useCORS: true 
     }).then(function(canvas) {
-        // 이미지가 완성되면 가상의 다운로드 링크를 브라우저에 몰래 생성해서 클릭하게 만듦
         var link = document.createElement('a');
         link.download = fileName;
         link.href = canvas.toDataURL('image/png');
         link.click();
     }).catch(function(error) {
-        console.error('사원증 발급 중 오류 발생:', error);
-        alert('🚨 시스템 오류: 인가된 장치에서 캡처 프로토콜이 거부되었습니다. 다시 시도하십시오.');
+        console.error('사원증 캡처 에러:', error);
+        alert('🚨 장치 보안 프로토콜 오류가 발생했습니다.');
     });
 }

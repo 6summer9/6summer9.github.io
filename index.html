@@ -154,6 +154,8 @@
 
                 <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-bottom: 25px;">
                     
+                    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-bottom: 25px;">
+                    
                     <div id="idCardFront" style="width: 280px; height: 440px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; display: flex; flex-direction: column; position: relative; box-sizing: border-box;">
                         <div style="background: #1e3a8a; color: white; padding: 18px 10px; text-align: center; position: relative;">
                             <div style="width:32px; height:32px; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin: 0 auto 6px auto; font-size:15px; color:#e2e8f0; border: 1px solid rgba(255,255,255,0.2);">
@@ -163,22 +165,21 @@
                             <strong style="font-size: 14px; display: block; margin-top: 1px; letter-spacing: 1px; font-weight:700;">중앙이상감염연구청</strong>
                         </div>
                         
-                        <div style="flex:1; background:#fafafa; padding: 20px 15px; display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
-                            <div id="cardPhotoArea" style="width: 105px; height: 130px; background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #94a3b8; overflow: hidden; position: relative;">
-                                <i class="fa-solid fa-user-tie" id="cardDefIcon" style="font-size: 50px;"></i>
+                        <div style="flex:1; background:#fafafa; padding: 22px 15px; display:flex; flex-direction:column; align-items:center; justify-content: space-between;">
+                            <div id="cardPhotoArea" style="width: 135px; height: 165px; background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #94a3b8; overflow: hidden; position: relative; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                                <i class="fa-solid fa-user-tie" id="cardDefIcon" style="font-size: 65px;"></i>
                                 <img id="cardUserImg" src="" style="width:100%; height:100%; object-fit:cover; display:none;">
                             </div>
                             
-                           <div style="text-align:center; width:100%;">
-                                <span style="font-size: 11px; color: #2563eb; font-weight:500; display:block; margin-bottom:3px;">
+                            <div style="text-align:center; width:100%;">
+                                <span style="font-size: 11px; color: #2563eb; font-weight:600; display:block; margin-bottom:4px; letter-spacing: 0.5px;">
                                     <span id="viewBureau">오염현상조사국</span> · <span id="viewSection">현장조사과</span>
                                 </span>
-                                <strong id="viewName" style="font-size: 20px; color: #0f172a; letter-spacing: 5px; display:block; margin-bottom:12px; padding-left:5px;">유나비</strong>
+                                <strong id="viewName" style="font-size: 22px; color: #0f172a; letter-spacing: 6px; display:block; margin-bottom:15px; padding-left:6px;">유나비</strong>
                                 
-                                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding: 8px 12px; font-size:11.5px; color:#334155; text-align:left; line-height:1.6;">
-                                    <div style="display:flex; justify-content:space-between;"><strong>• 소속 부서:</strong> <span id="viewCardDeptStr">오염현상조사국 현장조사과</span></div>
-                                    <div style="display:flex; justify-content:space-between;"><strong>• 임직원 사번:</strong> <span id="viewIdNum" style="font-family:'Share Tech Mono'; font-weight:bold;">KCIC-2026-0812</span></div>
-                                    <div style="display:flex; justify-content:space-between;"><strong>• 보안 권한:</strong> <span id="viewLevel" style="color:#dc2626; font-weight:bold;">LEVEL 2 (제한적 기밀)</span></div>
+                                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding: 10px; font-size:13px; color:#334155; text-align:center;">
+                                    <span style="font-size: 9px; color:#94a3b8; display:block; font-weight:bold; letter-spacing:1px; margin-bottom:2px;">EMPLOYEE ID NUMBER</span>
+                                    <span id="viewIdNum" style="font-family:'Share Tech Mono'; font-weight:bold; font-size: 15px; color: #0f172a; letter-spacing: 1px;">KCIC-2026-0812</span>
                                 </div>
                             </div>
                         </div>
@@ -206,29 +207,24 @@
                             </ol>
                         </div>
 
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 12px;">
-                            <div style="font-size: 11px; font-weight: bold; color: #0f172a; font-family:'Noto Sans KR'; letter-spacing: 2px;">
-                                중앙이상감염연구청장
+                        <div style="border-top: 1px solid #cbd5e1; padding-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 10px; color:#64748b; font-weight: bold;">[보안 인가 승인 등급]</span>
+                                <span id="viewLevel" style="font-size: 11px; color:#dc2626; font-weight:bold; font-family:'Share Tech Mono'; background: rgba(220,38,38,0.07); padding: 2px 6px; border: 1px solid rgba(220,38,38,0.2); border-radius: 4px;">LEVEL 2 (제한적 기밀)</span>
                             </div>
-                            <div style="width: 28px; height: 28px; border: 2px solid #dc2626; color: #dc2626; font-size: 8px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; line-height: 1.1; padding: 2px; box-sizing: border-box; transform: rotate(-5deg); background: rgba(220,38,38,0.03);">
-                                이감<br>청인
+                            
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+                                <div style="font-size: 11px; font-weight: bold; color: #0f172a; font-family:'Noto Sans KR'; letter-spacing: 2px;">
+                                    중앙이상감염연구청장
+                                </div>
+                                <div style="width: 28px; height: 28px; border: 2px solid #dc2626; color: #dc2626; font-size: 8px; font-weight: bold; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; line-height: 1.1; padding: 2px; box-sizing: border-box; transform: rotate(-5deg); background: rgba(220,38,38,0.03);">
+                                    이감<br>청인
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
-                <div style="text-align: center; display: flex; justify-content: center; gap: 15px;">
-                    <button type="button" onclick="downloadIdCard('front');" style="background: #1e3a8a; color: white; border: none; padding: 10px 18px; font-size: 13px; font-weight: bold; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-download"></i> 사원증 [앞면] 다운로드
-                    </button>
-                    <button type="button" onclick="downloadIdCard('back');" style="background: #475569; color: white; border: none; padding: 10px 18px; font-size: 13px; font-weight: bold; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-download"></i> 보안수칙 [뒷면] 다운로드
-                    </button>
-                </div>
-            </div>
-
-        </div>
 
         <div id="organization" class="tab-content">
             <h3 style="font-size: 20px; margin-bottom: 5px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
